@@ -1,0 +1,96 @@
+@import 'reset.css';
+@import 'colors.css';
+
+.event {
+  display: grid;
+  grid-template: 
+    ".    .        images" auto
+    "time title    images" auto
+    "time speakers images" auto
+    ".    .        images" auto /
+    10rem 3fr 300px;
+  padding: 0 1rem 0 3rem;
+}
+
+.event:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.event:nth-child(3n+1) {
+  background-color: var(--c-pink);
+}
+
+.event:nth-child(3n+2) {
+  background-color: var(--c-purple);
+}
+
+.event:nth-child(3n+3) {
+  background-color: var(--c-blue);
+}
+
+.event .time {
+  grid-area: time;
+  text-align: right;
+  display: grid;
+  grid-template:
+    "start" auto
+    "end"   auto
+    "."     1fr;
+  padding-right: 3rem;
+}
+
+.event .time p:first-child {
+  grid-area: start;
+  font-weight: bold;
+}
+
+.event .time p:last-child {
+  grid-area: end;
+}
+
+.event > h1 {
+  font-size: 1.6rem;
+  grid-area: title;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.event > h2 {
+  grid-area: speakers;
+}
+
+.event > h2 > ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.event > h2 > ul > li {
+  font-size: 1rem;
+}
+
+.event > h2 > ul > li:not(:last-child):after {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  content: "•";
+}
+
+.event > .images {
+  grid-area: images;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.event > .images > li {
+  display: flex;
+  margin: 0.5rem;
+}
+
+.event > .images img {
+  width: 69px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 70% 70% 70% 70% / 100% 100% 100% 100%;
+  object-fit: cover;
+}
