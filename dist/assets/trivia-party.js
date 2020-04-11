@@ -54,6 +54,51 @@
     }
   });
 });
+;define("trivia-party/components/event", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
+  /*
+    <li class="event">
+    <div class="time">
+      <p>{{@start}}</p>
+      <p>{{@end}}</p>
+    </div>
+    <h1>{{@title}}</h1>
+    <h2>
+      <ul>
+        {{#each @speakers as |speaker|}}
+        <li>{{speaker}}</li>
+        {{/each}}
+      </ul>
+    </h2>
+    <ul class="images">
+      {{#each @images as |image|}}
+      <li>
+        <img src="https://emberconf.com/assets/images/people/{{image}}.jpg">
+      </li>
+      {{/each}}
+    </ul>
+  </li>
+  
+  */
+  {
+    id: "5WFwoprR",
+    block: "{\"symbols\":[\"image\",\"speaker\",\"@start\",\"@end\",\"@title\",\"@speakers\",\"@images\"],\"statements\":[[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,3,[]],false],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,4,[]],false],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"h1\",true],[8],[1,[23,5,[]],false],[9],[0,\"\\n  \"],[7,\"h2\",true],[8],[0,\"\\n    \"],[7,\"ul\",true],[8],[0,\"\\n\"],[4,\"each\",[[23,6,[]]],null,{\"statements\":[[0,\"      \"],[7,\"li\",true],[8],[1,[23,2,[]],false],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n\"],[4,\"each\",[[23,7,[]]],null,{\"statements\":[[0,\"    \"],[7,\"li\",true],[8],[0,\"\\n      \"],[7,\"img\",true],[11,\"src\",[29,[\"https://emberconf.com/assets/images/people/\",[23,1,[]],\".jpg\"]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
+    meta: {
+      moduleName: "trivia-party/components/event.hbs"
+    }
+  });
+
+  var _default = Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, Ember._templateOnlyComponent());
+
+  _exports.default = _default;
+});
 ;define("trivia-party/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -302,6 +347,25 @@
   _exports.default = Router;
   Router.map(function () {});
 });
+;define("trivia-party/routes/application", ["exports", "fetch"], function (_exports, _fetch) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  class ApplicationRoute extends Ember.Route {
+    async model() {
+      let response = await (0, _fetch.default)("/events.json");
+      let data = await response.json();
+      return data.events;
+    }
+
+  }
+
+  _exports.default = ApplicationRoute;
+});
 ;define("trivia-party/serializers/-default", ["exports", "@ember-data/serializer/json"], function (_exports, _json) {
   "use strict";
 
@@ -363,8 +427,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "KfhmV5U1",
-    "block": "{\"symbols\":[],\"statements\":[[7,\"ul\",true],[10,\"class\",\"events\"],[8],[0,\"\\n  \"],[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"9:30am\"],[9],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"10:30am\"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"h1\",true],[8],[0,\"Opening Keynote\"],[9],[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"\\n      \"],[7,\"ul\",true],[8],[0,\"\\n        \"],[7,\"li\",true],[8],[0,\"Yehuda Katz\"],[9],[0,\"\\n        \"],[7,\"li\",true],[8],[0,\"Jen Weber\"],[9],[0,\"\\n        \"],[7,\"li\",true],[8],[0,\"Godfrey Chan\"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n      \"],[7,\"li\",true],[8],[7,\"img\",true],[10,\"src\",\"https://emberconf.com/assets/images/people/yehuda-katz.jpg\"],[8],[9],[9],[0,\"\\n      \"],[7,\"li\",true],[8],[7,\"img\",true],[10,\"src\",\"https://emberconf.com/assets/images/people/jen-weber.jpg\"],[8],[9],[9],[0,\"\\n      \"],[7,\"li\",true],[8],[7,\"img\",true],[10,\"src\",\"https://emberconf.com/assets/images/people/godfrey-chan.jpg\"],[8],[9],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"10:45am\"],[9],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"11:15am\"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"h1\",true],[8],[0,\"FastFlood: The Story of a Massive Memory Leak in FastBoot Land\"],[9],[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"\\n      \"],[7,\"ul\",true],[8],[0,\"\\n        \"],[7,\"li\",true],[8],[0,\"Sergio Arbeo\"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n      \"],[7,\"li\",true],[8],[7,\"img\",true],[10,\"src\",\"https://emberconf.com/assets/images/people/sergio-arbeo.jpg\"],[8],[9],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n    \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"11:30am\"],[9],[0,\"\\n      \"],[7,\"p\",true],[8],[0,\"12:00pm\"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"h1\",true],[8],[0,\"Octane: A Paradigm shift in EmberJS\"],[9],[0,\"\\n    \"],[7,\"h2\",true],[8],[0,\"\\n      \"],[7,\"ul\",true],[8],[0,\"\\n        \"],[7,\"li\",true],[8],[0,\"Suchita Doshi\"],[9],[0,\"\\n      \"],[9],[0,\"\\n    \"],[9],[0,\"\\n    \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n      \"],[7,\"li\",true],[8],[7,\"img\",true],[10,\"src\",\"https://emberconf.com/assets/images/people/suchita-doshi.jpg\"],[8],[9],[9],[0,\"\\n    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "LHkE7JGj",
+    "block": "{\"symbols\":[\"event\",\"@model\"],\"statements\":[[7,\"ul\",true],[10,\"class\",\"events\"],[8],[0,\"\\n\"],[4,\"each\",[[23,2,[\"events\"]]],null,{\"statements\":[[0,\"    \"],[5,\"event\",[],[[\"@title\",\"@start\",\"@end\",\"@speakers\"],[[23,1,[\"fields\",\"name\"]],[23,1,[\"fields\",\"start_time\"]],[23,1,[\"fields\",\"end_time\"]],[23,1,[\"fields\",\"speakers\"]]]]],[0,\"\\n\"]],\"parameters\":[1]},null],[9],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "trivia-party/templates/application.hbs"
     }

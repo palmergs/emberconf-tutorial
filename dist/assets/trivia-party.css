@@ -1,13 +1,22 @@
 @import 'reset.css';
 @import 'colors.css';
 
+html {
+  background-color: #110b22;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  padding: 1rem;
+}
+
 .event {
   display: grid;
   grid-template: 
-    ".    .        images" auto
-    "time title    images" auto
+    ".    .        images" 1rem
+    "time title    images" fit-content(100%)
     "time speakers images" auto
-    ".    .        images" auto /
+    ".    .        images" 1rem /
     10rem 3fr 300px;
   padding: 0 1rem 0 3rem;
 }

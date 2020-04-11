@@ -12,6 +12,10 @@ define("trivia-party/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
+  QUnit.test('routes/application.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/application.js should pass ESLint\n\n');
+  });
 });
 define("trivia-party/tests/lint/templates.template.lint-test", [], function () {
   "use strict";
@@ -19,7 +23,7 @@ define("trivia-party/tests/lint/templates.template.lint-test", [], function () {
   QUnit.module('TemplateLint');
   QUnit.test('trivia-party/templates/application.hbs', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'trivia-party/templates/application.hbs should pass TemplateLint.\n\ntrivia-party/templates/application.hbs\n  16:10  error  All `<img>` tags must have an alt attribute  require-valid-alt-text\n  17:10  error  All `<img>` tags must have an alt attribute  require-valid-alt-text\n  18:10  error  All `<img>` tags must have an alt attribute  require-valid-alt-text\n  33:10  error  All `<img>` tags must have an alt attribute  require-valid-alt-text\n  48:10  error  All `<img>` tags must have an alt attribute  require-valid-alt-text\n');
+    assert.ok(true, 'trivia-party/templates/application.hbs should pass TemplateLint.\n\n');
   });
 });
 define("trivia-party/tests/lint/tests.lint-test", [], function () {
@@ -30,12 +34,27 @@ define("trivia-party/tests/lint/tests.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
   });
+  QUnit.test('unit/routes/application-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/application-test.js should pass ESLint\n\n');
+  });
 });
 define("trivia-party/tests/test-helper", ["trivia-party/app", "trivia-party/config/environment", "@ember/test-helpers", "ember-qunit"], function (_app, _environment, _testHelpers, _emberQunit) {
   "use strict";
 
   (0, _testHelpers.setApplication)(_app.default.create(_environment.default.APP));
   (0, _emberQunit.start)();
+});
+define("trivia-party/tests/unit/routes/application-test", ["qunit", "ember-qunit"], function (_qunit, _emberQunit) {
+  "use strict";
+
+  (0, _qunit.module)('Unit | Route | application', function (hooks) {
+    (0, _emberQunit.setupTest)(hooks);
+    (0, _qunit.test)('it exists', function (assert) {
+      let route = this.owner.lookup('route:application');
+      assert.ok(route);
+    });
+  });
 });
 define('trivia-party/config/environment', [], function() {
   var prefix = 'trivia-party';
