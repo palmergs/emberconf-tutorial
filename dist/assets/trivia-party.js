@@ -78,9 +78,9 @@
       </ul>
     </h2>
     <ul class="images">
-      {{#each @images as |image|}}
+      {{#each @speakers as |speaker|}}
       <li>
-        <img src="https://emberconf.com/assets/images/people/{{image}}.jpg">
+        <img src="https://emberconf.com/assets/images/people/{{anchorize speaker}}.jpg">
       </li>
       {{/each}}
     </ul>
@@ -88,8 +88,8 @@
   
   */
   {
-    id: "5WFwoprR",
-    block: "{\"symbols\":[\"image\",\"speaker\",\"@start\",\"@end\",\"@title\",\"@speakers\",\"@images\"],\"statements\":[[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,3,[]],false],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,4,[]],false],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"h1\",true],[8],[1,[23,5,[]],false],[9],[0,\"\\n  \"],[7,\"h2\",true],[8],[0,\"\\n    \"],[7,\"ul\",true],[8],[0,\"\\n\"],[4,\"each\",[[23,6,[]]],null,{\"statements\":[[0,\"      \"],[7,\"li\",true],[8],[1,[23,2,[]],false],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n\"],[4,\"each\",[[23,7,[]]],null,{\"statements\":[[0,\"    \"],[7,\"li\",true],[8],[0,\"\\n      \"],[7,\"img\",true],[11,\"src\",[29,[\"https://emberconf.com/assets/images/people/\",[23,1,[]],\".jpg\"]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
+    id: "UguAVMkZ",
+    block: "{\"symbols\":[\"speaker\",\"speaker\",\"@start\",\"@end\",\"@title\",\"@speakers\"],\"statements\":[[7,\"li\",true],[10,\"class\",\"event\"],[8],[0,\"\\n  \"],[7,\"div\",true],[10,\"class\",\"time\"],[8],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,3,[]],false],[9],[0,\"\\n    \"],[7,\"p\",true],[8],[1,[23,4,[]],false],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"h1\",true],[8],[1,[23,5,[]],false],[9],[0,\"\\n  \"],[7,\"h2\",true],[8],[0,\"\\n    \"],[7,\"ul\",true],[8],[0,\"\\n\"],[4,\"each\",[[23,6,[]]],null,{\"statements\":[[0,\"      \"],[7,\"li\",true],[8],[1,[23,2,[]],false],[9],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \"],[9],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"ul\",true],[10,\"class\",\"images\"],[8],[0,\"\\n\"],[4,\"each\",[[23,6,[]]],null,{\"statements\":[[0,\"    \"],[7,\"li\",true],[8],[0,\"\\n      \"],[7,\"img\",true],[11,\"src\",[29,[\"https://emberconf.com/assets/images/people/\",[28,\"anchorize\",[[23,1,[]]],null],\".jpg\"]]],[8],[9],[0,\"\\n    \"],[9],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
     meta: {
       moduleName: "trivia-party/components/event.hbs"
     }
@@ -124,6 +124,22 @@
       return _debug.default;
     }
   });
+});
+;define("trivia-party/helpers/anchorize", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = Ember.Helper.helper(function anchorize(params
+  /*, hash*/
+  ) {
+    return params[0].toLowerCase().replace(".", "").replace("-", "").split(" ").join("-");
+  });
+
+  _exports.default = _default;
 });
 ;define("trivia-party/helpers/app-version", ["exports", "trivia-party/config/environment", "ember-cli-app-version/utils/regexp"], function (_exports, _environment, _regexp) {
   "use strict";

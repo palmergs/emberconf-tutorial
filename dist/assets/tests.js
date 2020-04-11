@@ -1,5 +1,26 @@
 'use strict';
 
+define("trivia-party/tests/integration/helpers/anchorize-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Helper | anchorize', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks); // Replace this with your real tests.
+
+    (0, _qunit.test)('it renders', async function (assert) {
+      this.set('inputValue', '1234');
+      await (0, _testHelpers.render)(Ember.HTMLBars.template(
+      /*
+        {{anchorize inputValue}}
+      */
+      {
+        id: "RI0IVHkV",
+        block: "{\"symbols\":[],\"statements\":[[1,[28,\"anchorize\",[[24,[\"inputValue\"]]],null],false]],\"hasEval\":false}",
+        meta: {}
+      }));
+      assert.equal(this.element.textContent.trim(), '1234');
+    });
+  });
+});
 define("trivia-party/tests/lint/app.lint-test", [], function () {
   "use strict";
 
@@ -7,6 +28,10 @@ define("trivia-party/tests/lint/app.lint-test", [], function () {
   QUnit.test('app.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app.js should pass ESLint\n\n');
+  });
+  QUnit.test('helpers/anchorize.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'helpers/anchorize.js should pass ESLint\n\n');
   });
   QUnit.test('router.js', function (assert) {
     assert.expect(1);
@@ -30,6 +55,10 @@ define("trivia-party/tests/lint/tests.lint-test", [], function () {
   "use strict";
 
   QUnit.module('ESLint | tests');
+  QUnit.test('integration/helpers/anchorize-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/helpers/anchorize-test.js should pass ESLint\n\n');
+  });
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');

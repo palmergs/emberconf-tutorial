@@ -12,9 +12,9 @@
     </ul>
   </h2>
   <ul class="images">
-    {{#each @images as |image|}}
+    {{#each @speakers as |speaker|}}
     <li>
-      <img src="https://emberconf.com/assets/images/people/{{image}}.jpg">
+      <img src="https://emberconf.com/assets/images/people/{{anchorize speaker}}.jpg">
     </li>
     {{/each}}
   </ul>
