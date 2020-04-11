@@ -359,7 +359,7 @@
     async model() {
       let response = await (0, _fetch.default)("/events.json");
       let data = await response.json();
-      return data.events;
+      return data;
     }
 
   }
