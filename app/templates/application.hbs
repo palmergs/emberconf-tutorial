@@ -1,10 +1,13 @@
-<ul class="events">
-  {{#each @model.events as |event|}}
-    <Event
-      @title={{event.fields.name}}
-      @start={{event.fields.start_time}}
-      @end={{event.fields.end_time}}
-      @speakers={{event.fields.speakers}}
-    />
-  {{/each}}
-</ul>
+<header>
+  <p>Header</p>
+</header>
+<main>
+  <aside>
+  </aside>
+  <section>
+    <Events @model={{@model}}/>  
+  </section>
+</main>
+<footer>
+  <p>Footer</p>
+</footer>

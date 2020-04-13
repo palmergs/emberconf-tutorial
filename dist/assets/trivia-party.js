@@ -99,6 +99,40 @@
 
   _exports.default = _default;
 });
+;define("trivia-party/components/events", ["exports"], function (_exports) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  const __COLOCATED_TEMPLATE__ = Ember.HTMLBars.template(
+  /*
+    <ul class="events">
+    {{#each @model.events as |event|}}
+      <Event
+        @title={{event.fields.name}}
+        @start={{event.fields.start_time}}
+        @end={{event.fields.end_time}}
+        @speakers={{event.fields.speakers}}
+      />
+    {{/each}}
+  </ul>
+  
+  */
+  {
+    id: "hLUl5tvr",
+    block: "{\"symbols\":[\"event\",\"@model\"],\"statements\":[[7,\"ul\",true],[10,\"class\",\"events\"],[8],[0,\"\\n\"],[4,\"each\",[[23,2,[\"events\"]]],null,{\"statements\":[[0,\"    \"],[5,\"event\",[],[[\"@title\",\"@start\",\"@end\",\"@speakers\"],[[23,1,[\"fields\",\"name\"]],[23,1,[\"fields\",\"start_time\"]],[23,1,[\"fields\",\"end_time\"]],[23,1,[\"fields\",\"speakers\"]]]]],[0,\"\\n\"]],\"parameters\":[1]},null],[9],[0,\"\\n\"]],\"hasEval\":false}",
+    meta: {
+      moduleName: "trivia-party/components/events.hbs"
+    }
+  });
+
+  var _default = Ember._setComponentTemplate(__COLOCATED_TEMPLATE__, Ember._templateOnlyComponent());
+
+  _exports.default = _default;
+});
 ;define("trivia-party/components/welcome-page", ["exports", "ember-welcome-page/components/welcome-page"], function (_exports, _welcomePage) {
   "use strict";
 
@@ -443,8 +477,8 @@
   _exports.default = void 0;
 
   var _default = Ember.HTMLBars.template({
-    "id": "LHkE7JGj",
-    "block": "{\"symbols\":[\"event\",\"@model\"],\"statements\":[[7,\"ul\",true],[10,\"class\",\"events\"],[8],[0,\"\\n\"],[4,\"each\",[[23,2,[\"events\"]]],null,{\"statements\":[[0,\"    \"],[5,\"event\",[],[[\"@title\",\"@start\",\"@end\",\"@speakers\"],[[23,1,[\"fields\",\"name\"]],[23,1,[\"fields\",\"start_time\"]],[23,1,[\"fields\",\"end_time\"]],[23,1,[\"fields\",\"speakers\"]]]]],[0,\"\\n\"]],\"parameters\":[1]},null],[9],[0,\"\\n\"]],\"hasEval\":false}",
+    "id": "rgbhrIY5",
+    "block": "{\"symbols\":[\"@model\"],\"statements\":[[7,\"header\",true],[8],[0,\"\\n  \"],[7,\"p\",true],[8],[0,\"Header\"],[9],[0,\"\\n\"],[9],[0,\"\\n\"],[7,\"main\",true],[8],[0,\"\\n  \"],[7,\"aside\",true],[8],[0,\"\\n  \"],[9],[0,\"\\n  \"],[7,\"section\",true],[8],[0,\"\\n    \"],[5,\"events\",[],[[\"@model\"],[[23,1,[]]]]],[0,\"  \\n  \"],[9],[0,\"\\n\"],[9],[0,\"\\n\"],[7,\"footer\",true],[8],[0,\"\\n  \"],[7,\"p\",true],[8],[0,\"Footer\"],[9],[0,\"\\n\"],[9],[0,\"\\n\"]],\"hasEval\":false}",
     "meta": {
       "moduleName": "trivia-party/templates/application.hbs"
     }
@@ -527,7 +561,7 @@ catch(err) {
 
 ;
           if (!runningTests) {
-            require("trivia-party/app")["default"].create({"name":"trivia-party","version":"0.0.0+149cff75"});
+            require("trivia-party/app")["default"].create({"name":"trivia-party","version":"0.0.0+a95fa5f4"});
           }
         
 //# sourceMappingURL=trivia-party.map
